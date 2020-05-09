@@ -76,9 +76,9 @@ def getTime(timeInfo):
 	minutesToStart = int(timeInfo/60)
 	
 	if minutesToStart == 1:
-		minuteString = str(minutesToStart) + " minutos"
-	else:
 		minuteString = str(minutesToStart) + " minuto"
+	else:
+		minuteString = str(minutesToStart) + " minutos"
 	
 	fullTimeString = ""
 	
