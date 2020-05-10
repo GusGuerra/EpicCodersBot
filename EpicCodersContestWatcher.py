@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as expectedCon
 
-driverCF = webdriver.Firefox('/usr/local/')
+driverCF = webdriver.Firefox()
 apiRequestLink = "https://codeforces.com/api/contest.list?gym=false"
 
 # At least in my computer, the api request page
