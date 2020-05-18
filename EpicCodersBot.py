@@ -15,7 +15,7 @@ from telegram.ext import CommandHandler
 helloPhrase = "Projeto EPIC CODERS (Universidade Federal de Itajubá) - Maratona de Programação\nDigite /comandos para ver a lista de comandos"
 
 helpPhrase = "Comandos disponíveis:\n/contest\n"
-
+groupLink = '<a href="https://codeforces.com/group/OGY9gSUQWd/">Grupo no Codeforces</a>'
 
 
 def getActiveText():
@@ -79,6 +79,13 @@ def commandsMessage(update, context):
 
 
 
+def groupLinkMessage(update, context):
+	context.bot.send_message(
+		chat_id=update.effective_chat.id, parse_mode=ParseMode.HTML, text=groupLink)
+	return
+
+
+
 updater = Updater(token=TKN, use_context=True)
 dispatcher = updater.dispatcher
 
@@ -90,10 +97,12 @@ logging.basicConfig(
 startHandler = CommandHandler('start', startMessage)
 contestHandler = CommandHandler('contest', contestMessage)
 helpHandler = CommandHandler('comandos', commandsMessage)
+groupLinkHandler = Commandhandler('grupo', groupLinkMessage)
 
 dispatcher.add_handler(startHandler)
 dispatcher.add_handler(contestHandler)
 dispatcher.add_handler(helpHandler)
+dispatcher.add_handler(groupLinkMessage)
 
 updater.start_polling()
 
