@@ -1,6 +1,7 @@
 import logging
 import EpicCodersContestWatcher
 from botTelegramKey import TKN
+from telegram import ParseMode
 from telegram.ext import Updater
 from telegram.ext import CommandHandler
 
@@ -81,7 +82,7 @@ def commandsMessage(update, context):
 
 def groupLinkMessage(update, context):
 	context.bot.send_message(
-		chat_id=update.effective_chat.id, parse_mode=ParseMode.HTML, text=groupLink)
+		chat_id=update.effective_chat.id, text=groupLink, parse_mode=ParseMode.HTML)
 	return
 
 
