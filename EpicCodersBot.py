@@ -97,12 +97,12 @@ logging.basicConfig(
 startHandler = CommandHandler('start', startMessage)
 contestHandler = CommandHandler('contest', contestMessage)
 helpHandler = CommandHandler('comandos', commandsMessage)
-groupLinkHandler = Commandhandler('grupo', groupLinkMessage)
+groupLinkHandler = CommandHandler('grupo', groupLinkMessage)
 
 dispatcher.add_handler(startHandler)
 dispatcher.add_handler(contestHandler)
 dispatcher.add_handler(helpHandler)
-dispatcher.add_handler(groupLinkMessage)
+dispatcher.add_handler(groupLinkHandler)
 
 updater.start_polling()
 
